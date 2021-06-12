@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "<<<app-docker>>>"
+info=$(docker info 2> /dev/null | grep "Containers:\|Running:\|Paused:\|Stopped:\|Images:")
+# Containers: 8 Running: 2 Paused: 0 Stopped: 6 Images: 50
+echo $info | awk '{print $2}'
+echo $info | awk '{print $4}'
+echo $info | awk '{print $6}'
+echo $info | awk '{print $8}'
+echo $info | awk '{print $10}'
